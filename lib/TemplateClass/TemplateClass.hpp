@@ -1,8 +1,0 @@
-
-#ifndef TEMPLATEPROJECT_TEMPLATECLASS_HPP
-#define TEMPLATEPROJECT_TEMPLATECLASS_HPP
-
-class TemplateClass {
-};
-
-#endif
