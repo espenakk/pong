@@ -3,7 +3,7 @@
 #include <raylib.h>
 
 Game::Game() {
-    ball = {100, 100, 15, 5, 5};
+    ball = {100, 100, 15, 6, 6};
     player1 = {10, GetScreenHeight() / 2 - 60, 25, 120, BLUE, 6};
     player2 = {GetScreenWidth() - 35, GetScreenHeight() / 2 - 60, 25, 120, RED, 6};
 }
@@ -33,6 +33,7 @@ void Game::update() {
     }
     invertBallSpeed();
     updateScore();
+    resetBall();
 }
 
 void Game::movePlayerUp(Paddle player) {
@@ -90,15 +91,22 @@ bool Game::checkRightWallCollision() {
 }
 
 bool Game::checkRoofCollision() {
-    if (ball.y - ball.radius <= 0) {
+    if (ball.y - ball.radius - 1 <= 0) {
         return true;
     } else
         return false;
 }
 
 bool Game::checkFloorCollision() {
-    if (ball.y + ball.radius >= GetScreenHeight()) {
+    if (ball.y + ball.radius + 1 >= GetScreenHeight()) {
         return true;
     } else
         return false;
 }
+
+void Game::resetBall() {
+        if (checkRightWallCollision() || checkLeftWallCollision()) {
+        ball.x = GetScreenWidth() / 2;
+        ball.y = GetScreenHeight() / 2;
+        }
+    }

@@ -7,7 +7,7 @@ Visuals::Visuals(int width, int height): width_(width), height_(height) {
 }
 
 void Visuals::drawBall(Ball ball) {
-    DrawCircle(ball.x, ball.y, ball.radius, GREEN);
+    DrawCircle(ball.x, ball.y, ball.radius, BLACK);
 }
 
 void Visuals::drawPaddle(Paddle player) {

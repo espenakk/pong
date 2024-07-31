@@ -2,9 +2,9 @@
 #ifndef PONG_VISUALS_HPP
 #define PONG_VISUALS_HPP
 
-#include <raylib.h>
 #include "Ball.hpp"
 #include "Paddle.hpp"
+#include <raylib.h>
 
 class Visuals {
 public:
